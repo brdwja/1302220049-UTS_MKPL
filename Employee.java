@@ -97,6 +97,7 @@ public class Employee {
 		
 		boolean isSingle = maritalStatus == MaritalStatus.SINGLE;
 		boolean isMarried = maritalStatus == MaritalStatus.MARRIED;
-		return TaxFunction.calculateTax(..., !isSingle, ...);
+		TaxPayer taxPayer = new TaxPayer(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, maritalStatus == MaritalStatus.MARRIED, childIdNumbers.size());
+		return TaxFunction.calculateTax(taxPayer);
 	}
 }
